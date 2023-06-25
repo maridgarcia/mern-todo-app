@@ -17,7 +17,8 @@ export default class TodoList extends Component {
     }
 
     todoList = () => {
-        return this.state.todos.map(function(currentTodo, i){
+        const { todos } = this.state;
+        return todos.map(function(currentTodo, i){
             return <Todo todo={currentTodo} key={i} />;
         })
     }
