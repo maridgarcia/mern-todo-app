@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import InputText from "./InputText";
 import InputRadio from "./InputRadio";
 
+import axios from 'axios';
+
 // import PropTypes from 'prop-types';
 
 export default class CreateTodo extends Component {
@@ -27,10 +29,18 @@ export default class CreateTodo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Form submitted!!`);
-    console.log(`Todo description: ${this.state.task}`);
-    console.log(`Todo responsible: ${this.state.responsible}`);
-    console.log(`Todo description: ${this.state.priority}`);
+    
+    const { task, responsible, priority, completed } = this.state
+    const newTodo = {
+      task,
+      responsible,
+      priority,
+      completed      
+    };
+
+    axios.post('http://localhost:5000/todos/add', newTodo).then(res => console.log(res.data));
+    
+    
     this.setState({
       task: "",
       responsible: "",
