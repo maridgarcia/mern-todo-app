@@ -33,7 +33,7 @@ todoRoutes.route('/:id').get((req, res) => {
     });
 });
 
-todoRoutes.route('/update/:id').post((req, res) => {
+todoRoutes.route('/update/:id').put((req, res) => {
     todo.findById(req.params.id, (err, todo) => {
         if (!todo)
             res.status(404).send("data is not found");
