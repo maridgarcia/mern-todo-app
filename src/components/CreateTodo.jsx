@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import InputText from "./InputText";
 import InputRadio from "./InputRadio";
-
 import axios from 'axios';
-
-// import PropTypes from 'prop-types';
 
 export default class CreateTodo extends Component {
   constructor(props) {
@@ -35,7 +32,7 @@ export default class CreateTodo extends Component {
       task,
       responsible,
       priority,
-      completed      
+      completed
     };
 
     axios.post('http://localhost:5000/todos/add', newTodo).then(res => console.log(res.data));

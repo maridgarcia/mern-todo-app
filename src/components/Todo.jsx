@@ -1,15 +1,26 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Todo = props => (
+export default class Todo extends React.Component {
+    constructor(props) {
+        super(props)
+
+        // this.state = {
+        //     todo: {}
+        // }
+    }
+    render() {
+        // const { todo } = this.state;
+        return (
         <tr>
-            <td className={props.todo.completed ? "completed" : ''}>{props.todo.task}</td>
-            <td className={props.todo.completed ? "completed" : ''}>{props.todo.responsible}</td>
-            <td className={props.todo.completed ? "completed" : ''}>{props.todo.priority}</td>
+            <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.task}</td>
+            <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.responsible}</td>
+            <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.priority}</td>
             <td>
-                <Link to={`/edit/${props.todo._id}`}>✏️</Link>
+                {/* <Link to={{pathname: `/update/${this.props.todo._id}`, state: { todo }}}>✏️</Link> */}
+                <Link to={`/update/${this.props.todo._id}`}>✏️</Link>
             </td>
         </tr>
-);
-
-export default Todo;
+        );
+    }
+}
