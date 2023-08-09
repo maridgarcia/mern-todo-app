@@ -59,7 +59,7 @@ export default class EditTodo extends Component {
         const { todo_description, todo_responsible, todo_priority, todo_completed } = this.state;
         return (
             <div>
-                <h3 align="center">Update Todo</h3>
+                <h3 align="center">Update Task</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group"> 
                         <label>Description: </label>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "../../src/index.css";
 
 export default class Todo extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class Todo extends React.Component {
             <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.task}</td>
             <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.responsible}</td>
             <td className={this.props.todo.completed ? "completed" : ''}>{this.props.todo.priority}</td>
-            <td>
+            <td className='update-icon'>
                 <Link to={`/update/${this.props.todo._id}`}>✏️</Link>
             </td>
         </tr>

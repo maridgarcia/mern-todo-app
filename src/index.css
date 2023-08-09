@@ -15,3 +15,7 @@ code {
 .completed {
   text-decoration: line-through;
 }
+
+.update-icon {
+  text-decoration: none;
+}
